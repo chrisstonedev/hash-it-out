@@ -13,8 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace FileValidator
+namespace Validator
 {
+    //TODO: Add options to this menu again or remove it completely.
+
     /// <summary>
     /// Interaction logic for Options.xaml
     /// </summary>

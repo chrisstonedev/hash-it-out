@@ -33,7 +33,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\SetupFileValidator.msi"
+        "OutputFilename" = "8:Debug\\Validator.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -74,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -161,7 +177,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Validator"
         "ProductCode" = "8:{E1599848-4121-4611-A687-9D0805B57C13}"
-        "PackageCode" = "8:{239C06C4-452C-4617-BF7C-4B79BFFD37A0}"
+        "PackageCode" = "8:{273C090B-E89E-476C-9DA4-2B3C0D7B0835}"
         "UpgradeCode" = "8:{662D261C-CF4F-4298-9DF2-2D0EBABD9536}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -169,12 +185,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Christopher Stone"
+        "Manufacturer" = "8:CJStone"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Validator"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:cjstone.net"
+        "ARPCONTACT" = "8:Christopher Stone"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:https://cjstone.net"
@@ -281,7 +297,7 @@
                                 {
                                     "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_7B83F9259AE44747BB379AC862AB0033"
                                     {
-                                    "Name" = "8:Verify checksum"
+                                    "Name" = "8:Validate checksum"
                                     "Condition" = "8:"
                                     "AlwaysCreate" = "11:FALSE"
                                     "DeleteAtUninstall" = "11:FALSE"
@@ -306,7 +322,7 @@
                                                     "Condition" = "8:"
                                                     "Transitive" = "11:FALSE"
                                                     "ValueTypes" = "3:1"
-                                                    "Value" = "8:C:\\\\Program Files (x86)\\\\Christopher Stone\\\\File Validator\\\\FileValidator.exe %1"
+                                                    "Value" = "8:C:\\Program Files (x86)\\CJStone\\Validator\\Validator.exe %1"
                                                     }
                                                 }
                                             }
@@ -760,7 +776,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C8370A12BCB04832B18650AD49D9801E"
             {
-            "SourcePath" = "8:..\\FileValidator\\obj\\Release\\Validator.exe"
+            "SourcePath" = "8:..\\Validator\\obj\\Release\\Validator.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_78F9E07A8B424B13B6AA9382D9B8F615"

@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Media;
 
-namespace FileValidator
+namespace Validator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -21,6 +21,11 @@ namespace FileValidator
         public MainWindow()
         {
             InitializeComponent();
+            string[] args = Environment.GetCommandLineArgs();
+            if (args.Length > 1)
+            {
+                validate(args[1]);
+            }
         }
 
         private void txtBox_InputMD5_TextChanged(object sender, TextChangedEventArgs e)
@@ -60,14 +65,7 @@ namespace FileValidator
             ofd.Title = "Select a File to Validate";
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                fileName = ofd.FileName;
-                txtBlk_FilePath.Text = fileName;
-                calculatedMD5 = GetMD5HashFromFile(fileName).ToLower();
-                txtBlk_ValueMD5.Text = calculatedMD5;
-                compareValuesMD5();
-                calculatedSHA1 = GetSHA1HashFromFile(fileName).ToLower();
-                txtBlk_ValueSHA1.Text = calculatedSHA1;
-                compareValuesSHA1();
+                validate(ofd.FileName);
             }
         }
         private void compareValuesMD5()
@@ -107,6 +105,18 @@ namespace FileValidator
         {
             Options options = new Options();
             options.Show();
+        }
+        
+        private void validate(String inputFile)
+        {
+            fileName = inputFile;
+            txtBlk_FilePath.Text = fileName;
+            calculatedMD5 = GetMD5HashFromFile(fileName).ToLower();
+            txtBlk_ValueMD5.Text = calculatedMD5;
+            compareValuesMD5();
+            calculatedSHA1 = GetSHA1HashFromFile(fileName).ToLower();
+            txtBlk_ValueSHA1.Text = calculatedSHA1;
+            compareValuesSHA1();
         }
     }
 }

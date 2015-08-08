@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validator", "FileValidator\Validator.csproj", "{B283D091-7B82-4EBA-835B-F52C1445BDDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validator", "Validator\Validator.csproj", "{B283D091-7B82-4EBA-835B-F52C1445BDDC}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupFileValidator", "SetupFileValidator\SetupFileValidator.vdproj", "{24B3A9C7-AF48-4BF0-821B-40D3CBD1D88A}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupFileValidator", "SetupValidator\SetupValidator.vdproj", "{60A26219-14D3-4B8B-AE73-3BF231AF75EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,10 @@ Global
 		{B283D091-7B82-4EBA-835B-F52C1445BDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B283D091-7B82-4EBA-835B-F52C1445BDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B283D091-7B82-4EBA-835B-F52C1445BDDC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{24B3A9C7-AF48-4BF0-821B-40D3CBD1D88A}.Debug|Any CPU.ActiveCfg = Debug
-		{24B3A9C7-AF48-4BF0-821B-40D3CBD1D88A}.Release|Any CPU.ActiveCfg = Release
+		{60A26219-14D3-4B8B-AE73-3BF231AF75EE}.Debug|Any CPU.ActiveCfg = Debug
+		{60A26219-14D3-4B8B-AE73-3BF231AF75EE}.Debug|Any CPU.Build.0 = Debug
+		{60A26219-14D3-4B8B-AE73-3BF231AF75EE}.Release|Any CPU.ActiveCfg = Release
+		{60A26219-14D3-4B8B-AE73-3BF231AF75EE}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
