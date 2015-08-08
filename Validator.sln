@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileValidator", "FileValidator\FileValidator.csproj", "{B283D091-7B82-4EBA-835B-F52C1445BDDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validator", "FileValidator\Validator.csproj", "{B283D091-7B82-4EBA-835B-F52C1445BDDC}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupFileValidator", "SetupFileValidator\SetupFileValidator.vdproj", "{24B3A9C7-AF48-4BF0-821B-40D3CBD1D88A}"
 EndProject

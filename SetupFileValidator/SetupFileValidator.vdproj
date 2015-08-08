@@ -43,13 +43,21 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\SetupFileValidator.msi"
+        "OutputFilename" = "8:Release\\Validator.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -59,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -143,7 +159,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:File Validator"
+        "ProductName" = "8:Validator"
         "ProductCode" = "8:{E1599848-4121-4611-A687-9D0805B57C13}"
         "PackageCode" = "8:{239C06C4-452C-4617-BF7C-4B79BFFD37A0}"
         "UpgradeCode" = "8:{662D261C-CF4F-4298-9DF2-2D0EBABD9536}"
@@ -156,9 +172,9 @@
         "Manufacturer" = "8:Christopher Stone"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:File Validator"
+        "Title" = "8:Validator"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Christopher Stone"
+        "ARPCONTACT" = "8:cjstone.net"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:https://cjstone.net"
@@ -744,7 +760,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C8370A12BCB04832B18650AD49D9801E"
             {
-            "SourcePath" = "8:..\\FileValidator\\obj\\Release\\FileValidator.exe"
+            "SourcePath" = "8:..\\FileValidator\\obj\\Release\\Validator.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_78F9E07A8B424B13B6AA9382D9B8F615"
