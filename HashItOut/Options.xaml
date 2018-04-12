@@ -1,0 +1,8 @@
+﻿<Window x:Class="HashItOut.Options"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Options" Height="70" Width="270" ResizeMode="NoResize">
+    <Grid Background="#FFD0D0FF">
+        <CheckBox x:Name="CheckBox_Context" Content="Add shortcut in context menu for files" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+    </Grid>
+</Window>
