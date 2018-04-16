@@ -7,7 +7,6 @@
         Title="Hash It Out" Height="210" Width="650" ResizeMode="NoResize">
     <Grid Background="#FFD0D0FF">
         <Button x:Name="btn_Browse" Content="Browse" HorizontalAlignment="Left" Margin="30,20,0,0" VerticalAlignment="Top" Height="25" Width="75" Click="btn_Browse_Click" Background="#FFE0E0FF" BorderBrush="#FF8080FF"/>
-        <Button x:Name="btn_Options" Content="Options" HorizontalAlignment="Right" Margin="0,20,30,0" VerticalAlignment="Top" Height="25" Width="75" Click="btn_Options_Click" Background="#FFE0E0FF" BorderBrush="#FF8080FF" IsEnabled="False"/>
         <TextBlock x:Name="txtBlk_FilePath" HorizontalAlignment="Left" Margin="135,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtBlk_LabelMD5" HorizontalAlignment="Left" Margin="30,60,0,0" TextWrapping="Wrap" Text="MD5:" VerticalAlignment="Top" Foreground="#FF0000A0"/>
         <TextBlock x:Name="txtBlk_CompareMD5" HorizontalAlignment="Left" Margin="100,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>

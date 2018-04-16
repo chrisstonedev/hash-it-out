@@ -101,12 +101,6 @@ namespace HashItOut
             }
         }
 
-        private void btn_Options_Click(object sender, RoutedEventArgs e)
-        {
-            Options options = new Options();
-            options.Show();
-        }
-        
         private void validate(String inputFile)
         {
             fileName = inputFile;
