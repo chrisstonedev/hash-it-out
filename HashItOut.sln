@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashItOut", "HashItOut\Hash
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HashItOut.Setup", "HashItOut.Setup\HashItOut.Setup.vdproj", "{1BDBAF71-17A0-4EDC-BEE2-AC7DF23E3937}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashItOut.Tests", "HashItOut.Tests\HashItOut.Tests.csproj", "{2EFD491A-1169-40AE-9AE4-84D49476B6F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{B283D091-7B82-4EBA-835B-F52C1445BDDC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1BDBAF71-17A0-4EDC-BEE2-AC7DF23E3937}.Debug|Any CPU.ActiveCfg = Debug
 		{1BDBAF71-17A0-4EDC-BEE2-AC7DF23E3937}.Release|Any CPU.ActiveCfg = Release
+		{2EFD491A-1169-40AE-9AE4-84D49476B6F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFD491A-1169-40AE-9AE4-84D49476B6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFD491A-1169-40AE-9AE4-84D49476B6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFD491A-1169-40AE-9AE4-84D49476B6F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
