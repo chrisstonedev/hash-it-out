@@ -21,7 +21,7 @@ namespace HashItOut.Tests
             HashViewModel target = new HashViewModel(fileService.Object);
             target.BrowseCommand.Execute(null);
 
-            Assert.AreEqual(string.Empty, target.File.SelectedPath);
+            Assert.AreEqual((string)null, target.File.SelectedPath);
         }
 
         [TestMethod]
