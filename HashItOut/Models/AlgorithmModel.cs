@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows.Media;
 
 namespace HashItOut.Models
 {
@@ -33,6 +34,7 @@ namespace HashItOut.Models
                     input = value;
                     RaisePropertyChanged("Input");
                     RaisePropertyChanged("CompareResult");
+                    RaisePropertyChanged("CompareColor");
                 }
             }
         }
@@ -50,6 +52,7 @@ namespace HashItOut.Models
                     valueResult = value;
                     RaisePropertyChanged("ValueResult");
                     RaisePropertyChanged("CompareResult");
+                    RaisePropertyChanged("CompareColor");
                 }
             }
         }
@@ -65,6 +68,20 @@ namespace HashItOut.Models
                     return string.Empty;
 
                 return input.Trim().ToUpper() == valueResult.Trim().ToUpper() ? "SUCCEEDED" : "FAILED";
+            }
+        }
+
+        /// <summary>
+        /// Gets the color to use to paint the compare result, indicating success or failure.
+        /// </summary>
+        public Brush CompareColor
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(input))
+                    return Brushes.Black;
+
+                return input.Trim().ToUpper() == valueResult.Trim().ToUpper() ? Brushes.DarkGreen : Brushes.DarkRed;
             }
         }
 

@@ -7,10 +7,16 @@ using System.Security.Cryptography;
 
 namespace HashItOut.ViewModels
 {
+    /// <summary>
+    /// Represents state and operations for the program.
+    /// </summary>
     public class HashViewModel
     {
         private readonly IFileService fileService;
 
+        /// <summary>
+        /// Gets a collection of algorithms used to hash a file.
+        /// </summary>
         public ObservableCollection<AlgorithmModel> Algorithms { get; private set; }
             = new ObservableCollection<AlgorithmModel>
             {
@@ -18,14 +24,24 @@ namespace HashItOut.ViewModels
                 new AlgorithmModel(HashAlgorithmType.SHA1)
             };
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HashViewModel"/> class with dependencies.
+        /// </summary>
+        /// <param name="fileService">An instance of a file operstions service.</param>
         public HashViewModel(IFileService fileService)
         {
             this.fileService = fileService;
             BrowseCommand = new RelayCommand(BrowseForFile);
         }
 
+        /// <summary>
+        /// Gets or sets an instance of a file operations model.
+        /// </summary>
         public FileModel File { get; set; } = new FileModel();
 
+        /// <summary>
+        /// Informs instances with references to a property that the value has been changed.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string property)
@@ -33,6 +49,9 @@ namespace HashItOut.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
+        /// <summary>
+        /// A command that tells the program to browse for a file to hash.
+        /// </summary>
         public RelayCommand BrowseCommand { get; set; }
 
         private void BrowseForFile()
@@ -57,7 +76,7 @@ namespace HashItOut.ViewModels
                 }
                 using (hashAlgorithm)
                 using (var stream = fileService.OpenFile(File.SelectedPath))
-                    algorithm.ValueResult = BitConverter.ToString(hashAlgorithm.ComputeHash(stream)).Replace("-", string.Empty);
+                    algorithm.ValueResult = BitConverter.ToString(hashAlgorithm.ComputeHash(stream)).Replace("-", string.Empty).ToLower();
             }
         }
     }

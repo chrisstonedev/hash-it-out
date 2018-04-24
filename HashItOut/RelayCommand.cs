@@ -3,40 +3,25 @@ using System.Windows.Input;
 
 namespace HashItOut
 {
+    /// <summary>
+    /// Represents a command.
+    /// </summary>
     public class RelayCommand : ICommand
     {
-        Action targetExecuteMethod;
-        Func<bool> targetCanExecuteMethod;
+        Action executeMethod;
 
-        public RelayCommand(Action executeMethod)
-        {
-            targetExecuteMethod = executeMethod;
-        }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RelayCommand"/> class with an action.
+        /// </summary>
+        public RelayCommand(Action executeMethod) => this.executeMethod = executeMethod;
 
-        public RelayCommand(Action executeMethod, Func<bool> canExecuteMethod)
-        {
-            targetExecuteMethod = executeMethod;
-            targetCanExecuteMethod = canExecuteMethod;
-        }
+        /// <summary>Implements <see cref="ICommand.CanExecute(object)"/>.</summary>
+        public bool CanExecute(object parameter) => true;
 
-        public void RaiseCanExecuteChanged()
-        {
-            CanExecuteChanged(this, EventArgs.Empty);
-        }
-
-        bool ICommand.CanExecute(object parameter)
-        {
-            if (targetCanExecuteMethod != null)
-                return targetCanExecuteMethod();
-
-            return targetExecuteMethod != null;
-        }
-
+        /// <summary>Implements <see cref="ICommand.CanExecuteChanged"/>.</summary>
         public event EventHandler CanExecuteChanged = delegate { };
 
-        public void Execute(object parameter)
-        {
-            targetExecuteMethod?.Invoke();
-        }
+        /// <summary>Implements <see cref="ICommand.Execute(object)"/>.</summary>
+        public void Execute(object parameter) => executeMethod?.Invoke();
     }
 }
