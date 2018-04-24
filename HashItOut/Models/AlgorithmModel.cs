@@ -64,7 +64,7 @@ namespace HashItOut.Models
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(input))
+                if (string.IsNullOrWhiteSpace(input) || string.IsNullOrWhiteSpace(valueResult) || valueResult == "Loading...")
                     return string.Empty;
 
                 return input.Trim().ToUpper() == valueResult.Trim().ToUpper() ? "SUCCEEDED" : "FAILED";
@@ -78,7 +78,7 @@ namespace HashItOut.Models
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(input))
+                if (string.IsNullOrWhiteSpace(input) || string.IsNullOrWhiteSpace(valueResult) || valueResult == "Loading...")
                     return Brushes.Black;
 
                 return input.Trim().ToUpper() == valueResult.Trim().ToUpper() ? Brushes.DarkGreen : Brushes.DarkRed;

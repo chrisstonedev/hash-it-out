@@ -9,7 +9,7 @@ namespace HashItOut.Services
     class FileService : IFileService
     {
         /// <summary>
-        /// Implements <see cref="OpenFile(string)"/>.
+        /// Implements <see cref="IFileService.OpenFile(string)"/>.
         /// </summary>
         public Stream OpenFile(string path)
         {

@@ -4,6 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Security.Cryptography;
+using System.Threading.Tasks;
 
 namespace HashItOut.ViewModels
 {
@@ -31,7 +32,7 @@ namespace HashItOut.ViewModels
         public HashViewModel(IFileService fileService)
         {
             this.fileService = fileService;
-            BrowseCommand = new RelayCommand(BrowseForFile);
+            BrowseCommand = new RelayCommand(BrowseForFileAsync);
         }
 
         /// <summary>
@@ -54,12 +55,16 @@ namespace HashItOut.ViewModels
         /// </summary>
         public RelayCommand BrowseCommand { get; set; }
 
-        private void BrowseForFile()
+        private async void BrowseForFileAsync()
         {
-            File.SelectedPath = fileService.OpenFileDialog() ?? string.Empty;
+            string selectedPath = fileService.OpenFileDialog() ?? string.Empty;
 
-            if (string.IsNullOrEmpty(File.SelectedPath))
+            if (string.IsNullOrEmpty(selectedPath))
                 return;
+
+            File.SelectedPath = selectedPath;
+            foreach (AlgorithmModel algorithm in Algorithms)
+                algorithm.ValueResult = "Loading...";
 
             foreach (AlgorithmModel algorithm in Algorithms)
             {
@@ -76,7 +81,7 @@ namespace HashItOut.ViewModels
                 }
                 using (hashAlgorithm)
                 using (var stream = fileService.OpenFile(File.SelectedPath))
-                    algorithm.ValueResult = BitConverter.ToString(hashAlgorithm.ComputeHash(stream)).Replace("-", string.Empty).ToLower();
+                    algorithm.ValueResult = await Task.Run(() => BitConverter.ToString(hashAlgorithm.ComputeHash(stream)).Replace("-", string.Empty).ToLower());
             }
         }
     }
