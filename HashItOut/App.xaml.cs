@@ -7,5 +7,6 @@ namespace HashItOut
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

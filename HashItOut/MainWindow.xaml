@@ -8,7 +8,7 @@
         Title = "Hash It Out"
         Height = "210"
         Width = "650"
-        ResizeMode="CanMinimize">
+        ResizeMode="CanMinimize" Icon="pack://siteoforigin:,,,/Resources/HashItOut.ico">
     <Grid Background="#FFD0D0FF">
         <views:HashView x:Name = "HashViewControl"/>
     </Grid>

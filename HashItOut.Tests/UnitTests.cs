@@ -5,6 +5,7 @@ using Moq;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace HashItOut.Tests
 {
@@ -12,20 +13,20 @@ namespace HashItOut.Tests
     public class UnitTests
     {
         [TestMethod]
-        public void NoFileSelectedTest()
+        public async Task NoFileSelectedTestAsync()
         {
             Mock<IFileService> fileService = new Mock<IFileService>();
             fileService.Setup(service => service.OpenFileDialog()).Returns((string)null);
 
             //Setup target and test
             HashViewModel target = new HashViewModel(fileService.Object);
-            target.BrowseCommand.Execute(null);
+            await Task.Run(() => target.BrowseCommand.Execute(null)).ConfigureAwait(true);
 
-            Assert.AreEqual((string)null, target.File.SelectedPath);
+            Assert.AreEqual(null, target.File.SelectedPath);
         }
 
         [TestMethod]
-        public void LazyCogHashTest()
+        public async Task LazyCogHashTestAsync()
         {
             // Arrange.
             const string FILE_NAME = @"\\TESTS\lazycog.txt";
@@ -37,10 +38,10 @@ namespace HashItOut.Tests
 
             // Act.
             HashViewModel target = new HashViewModel(fileService.Object);
-            target.BrowseCommand.Execute(null);
+            await Task.Run(() => target.BrowseCommand.Execute(null));
 
             // Assert.
-            Assert.AreEqual(FILE_NAME, target.File.SelectedPath);
+            Assert.AreEqual(FILE_NAME, target.File.SelectedPath, "The expected file name is different.");
 
             Assert.AreEqual("1055d3e698d289f2af8663725127bd4b",
                 target.Algorithms.First(x => x.Function == "MD5").ValueResult.ToLower(),
@@ -52,7 +53,7 @@ namespace HashItOut.Tests
         }
 
         [TestMethod]
-        public void LazyDogHashTest()
+        public async Task LazyDogHashTestAsync()
         {
             // Arrange.
             const string FILE_NAME = @"\\TESTS\lazydog.txt";
@@ -64,10 +65,10 @@ namespace HashItOut.Tests
 
             // Act.
             HashViewModel target = new HashViewModel(fileService.Object);
-            target.BrowseCommand.Execute(null);
+            await Task.Run(() => target.BrowseCommand.Execute(null));
 
             // Assert.
-            Assert.AreEqual(FILE_NAME, target.File.SelectedPath);
+            Assert.AreEqual(FILE_NAME, target.File.SelectedPath, "The expected file name is different.");
 
             Assert.AreEqual("9e107d9d372bb6826bd81d3542a419d6",
                 target.Algorithms.First(x => x.Function == "MD5").ValueResult.ToLower(),

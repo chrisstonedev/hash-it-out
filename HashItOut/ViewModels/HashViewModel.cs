@@ -33,6 +33,10 @@ namespace HashItOut.ViewModels
         {
             this.fileService = fileService;
             BrowseCommand = new RelayCommand(BrowseForFileAsync);
+
+            string[] args = Environment.GetCommandLineArgs();
+            if (args.Length > 1 && args[1] != "--port")
+                Task.Run(() => ComputeHashAsync(args[1]));
         }
 
         /// <summary>
@@ -59,10 +63,14 @@ namespace HashItOut.ViewModels
         {
             string selectedPath = fileService.OpenFileDialog() ?? string.Empty;
 
-            if (string.IsNullOrEmpty(selectedPath))
-                return;
+            if (!string.IsNullOrEmpty(selectedPath))
+                await ComputeHashAsync(selectedPath);
 
-            File.SelectedPath = selectedPath;
+        }
+
+        private async Task ComputeHashAsync(string filePath)
+        {
+            File.SelectedPath = filePath;
             foreach (AlgorithmModel algorithm in Algorithms)
                 algorithm.ValueResult = "Loading...";
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace HashItOut
@@ -22,6 +23,6 @@ namespace HashItOut
         public event EventHandler CanExecuteChanged = delegate { };
 
         /// <summary>Implements <see cref="ICommand.Execute(object)"/>.</summary>
-        public void Execute(object parameter) => executeMethod?.Invoke();
+        public async void Execute(object parameter) => await Task.Run(() => executeMethod?.Invoke());
     }
 }
