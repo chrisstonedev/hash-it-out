@@ -10,7 +10,6 @@ namespace HashItOut.Models
     {
         private string input;
         private string valueResult;
-        private HashAlgorithmType hashAlgorithmType;
 
         /// <summary>
         /// Initializes an instance of the <see cref="AlgorithmModel"/> class.
@@ -18,7 +17,7 @@ namespace HashItOut.Models
         /// <param name="hashAlgorithmType">The type of algorithm represented by this instance.</param>
         public AlgorithmModel(HashAlgorithmType hashAlgorithmType)
         {
-            this.hashAlgorithmType = hashAlgorithmType;
+            Type = hashAlgorithmType;
         }
 
         /// <summary>
@@ -92,7 +91,7 @@ namespace HashItOut.Models
         {
             get
             {
-                switch (hashAlgorithmType)
+                switch (Type)
                 {
                     case HashAlgorithmType.MD5:
                         return "MD5";
@@ -107,7 +106,7 @@ namespace HashItOut.Models
         /// <summary>
         /// Gets the underlying type of the algorithm.
         /// </summary>
-        public HashAlgorithmType Type => hashAlgorithmType;
+        public HashAlgorithmType Type { get; }
 
         /// <summary>
         /// Handles cases in which a property value has been changed.

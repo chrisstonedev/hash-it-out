@@ -1,5 +1,6 @@
 ﻿using HashItOut.Services;
 using HashItOut.ViewModels;
+using System;
 using System.Windows;
 
 namespace HashItOut
@@ -14,9 +15,19 @@ namespace HashItOut
         /// </summary>
         public MainWindow()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
 
-            HashViewControl.DataContext = new HashViewModel(new FileService());
+                HashViewControl.DataContext = new HashViewModel(new FileService());
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null)
+                    MessageBox.Show(ex.InnerException.ToString());
+                else
+                    MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

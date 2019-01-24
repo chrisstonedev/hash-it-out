@@ -9,7 +9,7 @@ namespace HashItOut
     /// </summary>
     public class RelayCommand : ICommand
     {
-        Action executeMethod;
+        readonly Action executeMethod;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RelayCommand"/> class with an action.

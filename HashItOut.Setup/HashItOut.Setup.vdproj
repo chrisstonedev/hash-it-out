@@ -112,9 +112,9 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.5.2"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.7.2"
                 "AllowLaterVersions" = "11:FALSE"
-                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=397708"
+                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=863262"
                 }
             }
         }
@@ -188,7 +188,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Hash It Out"
         "ProductCode" = "8:{44DF4C13-E73C-4CCE-90F3-EDA82C811AE7}"
-        "PackageCode" = "8:{7C0C2DBA-9A54-474C-B344-34A8B382012C}"
+        "PackageCode" = "8:{6AC89DB3-FF2E-4534-BFFD-10CA7F62AC97}"
         "UpgradeCode" = "8:{47EFDF64-D665-43AD-9DD5-E3A79B3A1681}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -376,14 +376,14 @@
             {
             "Name" = "8:Hash It Out"
             "Arguments" = "8:"
-            "Description" = "8:"
+            "Description" = "8:Hash It Out"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
             "Target" = "8:_A7130C208CA549C1B803AEBD28A01EE8"
             "Folder" = "8:_CCA24EB4AF1E47FBA519251D9DD9A58B"
             "WorkingFolder" = "8:_3893C42986E9487A9D73400E6F09FB21"
-            "Icon" = "8:"
+            "Icon" = "8:_A7130C208CA549C1B803AEBD28A01EE8"
             "Feature" = "8:"
             }
         }
